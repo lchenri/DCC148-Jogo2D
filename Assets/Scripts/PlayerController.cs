@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(xInput * xSpeed, rb.velocity.y);
 
         run = Mathf.Abs(xInput) > 0.3f;
-
+a
         //Inverte a direção do sprite
         if(xInput > 0)
             transform.eulerAngles = new Vector3(0f, 0f, 0f);
