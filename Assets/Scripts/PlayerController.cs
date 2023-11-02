@@ -53,13 +53,23 @@ public class PlayerController : MonoBehaviour
         Debug.Log("FPS: " + (1.0f / Time.deltaTime));
 
         Application.targetFrameRate = 60;
+
+        if(transform.position.y < -25)
+        {
+            PlayerDeath();
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
+            PlayerDeath();
         }
+    }
+
+    void PlayerDeath()
+    {
+        Destroy(gameObject);
     }
 }
