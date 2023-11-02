@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ChainController : MonoBehaviour
 {
+    public float speed = 2.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +15,6 @@ public class ChainController : MonoBehaviour
     void Update()
     {
         //Rotate Around Head
-        transform.RotateAround(transform.parent.position, Vector3.forward, 45 * Time.deltaTime);
+        transform.RotateAround(transform.parent.position, Vector3.forward, 45 * Time.deltaTime * speed);
     }
 }
