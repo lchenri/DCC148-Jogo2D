@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
         jump = false;
         
         //Primeiro verifica se o jogador está no chão;
-        isChao = Physics2D.OverlapCircle(isChaoCheck.position, 0.1f, isChaoLayer);
+        isChao = Physics2D.OverlapCircle(isChaoCheck.position, 0.5f, isChaoLayer);
 
         //Movimenta o jogador horizontalmente
         float xInput = Input.GetAxis("Horizontal");
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
             transform.eulerAngles = new Vector3(0f, 180f, 0f);
 
         //Verifica se o jogador está no chão e se o botão de pulo foi pressionado
-        if(isChao && Input.GetKeyDown(KeyCode.Space))
+        if(isChao && Input.GetKey(KeyCode.Space))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             jump = true;
@@ -49,5 +49,9 @@ public class PlayerController : MonoBehaviour
 
         animator.SetBool("Running", run);
         animator.SetBool("Jumping", jump);
+
+        Debug.Log("FPS: " + (1.0f / Time.deltaTime));
+
+        Application.targetFrameRate = 60;
     }
 }
