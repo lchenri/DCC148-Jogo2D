@@ -17,7 +17,7 @@ public class ChestController : MonoBehaviour
 
     void Update()
     {
-        UnityEngine.Debug.Log(animationTime);
+        
 
         if (chestOpenBool)
         {
