@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
     {
         if(collider.gameObject.CompareTag("Chest"))
         {
-            //Passa para o próximo nível
+            //Passar para o próximo nivel
         }
     }
 
