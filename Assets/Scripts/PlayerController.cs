@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("Running", run);
         animator.SetBool("Jumping", jump);
 
-        Debug.Log("FPS: " + (1.0f / Time.deltaTime));
+        // Debug.Log("FPS: " + (1.0f / Time.deltaTime));
 
         Application.targetFrameRate = 60;
 
@@ -68,6 +68,14 @@ public class PlayerController : MonoBehaviour
         if(collision.gameObject.CompareTag("Enemy"))
         {
             PlayerDeath();
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.gameObject.CompareTag("Chest"))
+        {
+            //Passa para o próximo nível
         }
     }
 

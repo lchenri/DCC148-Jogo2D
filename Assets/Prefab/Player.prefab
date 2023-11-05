@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 4568081835289535540}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -263,6 +263,7 @@ MonoBehaviour:
   isChaoLayer:
     serializedVersion: 2
     m_Bits: 64
+  GameOver: {fileID: 0}
 --- !u!95 &4568081835289535540
 Animator:
   serializedVersion: 5
