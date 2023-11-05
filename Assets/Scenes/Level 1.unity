@@ -2540,7 +2540,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e689ca36f5ac7ed4ca35a60549fb822e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6a334637cc64a8144ad504b700fdfd70, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3340,7 +3340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09d768ee74020d48b5e3ae574441dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: Level2
+  nextLevel: Level 2
   menu: Menu
   levelAtual: Level 1
 --- !u!4 &1641640343
@@ -11660,7 +11660,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e689ca36f5ac7ed4ca35a60549fb822e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6a334637cc64a8144ad504b700fdfd70, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

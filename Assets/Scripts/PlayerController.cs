@@ -88,11 +88,9 @@ public class PlayerController : MonoBehaviour
             {
                 Life1.gameObject.SetActive(false);
                 life--;
-            }
-            else if(life == 0)
-            {
                 PlayerDeath();
             }
+
         }
     }
 
