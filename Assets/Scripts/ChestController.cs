@@ -9,6 +9,7 @@ public class ChestController : MonoBehaviour
     public GameObject chestAnimationObject;
     private float animationTime = 0.75f;
     private bool chestOpenBool = false;
+    public Transform LevelClear;
 
     void Start()
     {
@@ -29,6 +30,7 @@ public class ChestController : MonoBehaviour
             chestAnimationObject.SetActive(false);
             chestOpen.SetActive(true);
             chestOpenBool = false;
+            LevelClear.gameObject.SetActive(true);
         }
     }
 
