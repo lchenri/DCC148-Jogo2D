@@ -14,6 +14,13 @@ public class PlayerController : MonoBehaviour
     private bool run;
     private bool jump;
     public Transform GameOver;
+    public Transform LevelClear;
+    public int life = 3;
+    public Transform Life1;
+    public Transform Life2;
+    public Transform Life3;
+
+
     
 
     void Start()
@@ -21,7 +28,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         GameOver.gameObject.SetActive(false);
-
+        LevelClear.gameObject.SetActive(false);
     }
 
     void Update()
@@ -67,15 +74,25 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Enemy"))
         {
-            PlayerDeath();
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D collider)
-    {
-        if(collider.gameObject.CompareTag("Chest"))
-        {
-            //Passar para o próximo nivel
+            if(life == 3)
+            {
+                Life3.gameObject.SetActive(false);
+                life--;
+            }
+            else if(life == 2)
+            {
+                Life2.gameObject.SetActive(false);
+                life--;
+            }
+            else if(life == 1)
+            {
+                Life1.gameObject.SetActive(false);
+                life--;
+            }
+            else if(life == 0)
+            {
+                PlayerDeath();
+            }
         }
     }
 
