@@ -1,5 +1,5 @@
 
-# Nome do Jogo 2D
+# Don't Give Up
 
 ![Screenshot do Jogo](./Img/Img1.png)
 
