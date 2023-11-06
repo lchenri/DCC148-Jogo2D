@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public Transform Life1;
     public Transform Life2;
     public Transform Life3;
+    private AudioSource sound;
 
 
     
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         GameOver.gameObject.SetActive(false);
         LevelClear.gameObject.SetActive(false);
+        sound = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -74,6 +76,7 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Enemy"))
         {
+            sound.Play();
             if(life == 3)
             {
                 Life3.gameObject.SetActive(false);
@@ -96,7 +99,7 @@ public class PlayerController : MonoBehaviour
 
     void PlayerDeath()
     {
-        Destroy(gameObject);
+        Destroy(gameObject, 5.0f);
         GameOver.gameObject.SetActive(true);
     }
 }

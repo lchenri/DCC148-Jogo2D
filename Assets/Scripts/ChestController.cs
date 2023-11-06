@@ -10,10 +10,12 @@ public class ChestController : MonoBehaviour
     private float animationTime = 0.75f;
     private bool chestOpenBool = false;
     public Transform LevelClear;
+    private AudioSource sound;
 
     void Start()
     {
         chestOpen.SetActive(false);
+        sound = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -38,6 +40,7 @@ public class ChestController : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
+            sound.Play();
             chestAnimation.SetTrigger("Open");
             chestOpenBool = true;
         }
