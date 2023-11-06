@@ -33,16 +33,19 @@ public class CameraController : MonoBehaviour
     {
         //Definir valores mínimos e máximos de x,y,z para a camera
 
-        Vector3 posicaoAlvo = alvo.position + offset;
-        //Verificar se posicaoAlvo está dentro dos limites
-        //Limitar para os valores mínimos e máximos
-        Vector3 posicaoLimite = new Vector3(
+        if(alvo != null)
+        {
+            Vector3 posicaoAlvo = alvo.position + offset;
+            //Verificar se posicaoAlvo está dentro dos limites
+            //Limitar para os valores mínimos e máximos
+            Vector3 posicaoLimite = new Vector3(
             Mathf.Clamp(posicaoAlvo.x, minValue.x, maxValue.x), //permite apenas que o valor de x fique entre o min e o max
             Mathf.Clamp(posicaoAlvo.y, minValue.y, maxValue.y), //permite apenas que o valor de y fique entre o min e o max
             Mathf.Clamp(posicaoAlvo.z, minValue.z, maxValue.z)  //permite apenas que o valor de z fique entre o min e o max
-        );
+            );
+            transform.position = Vector3.SmoothDamp(transform.position, posicaoLimite, ref velocity, smoothTime);
+        }
 
-        transform.position = Vector3.SmoothDamp(transform.position, posicaoLimite, ref velocity, smoothTime);
     }
 
 }

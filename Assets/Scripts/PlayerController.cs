@@ -99,7 +99,12 @@ public class PlayerController : MonoBehaviour
 
     void PlayerDeath()
     {
-        Destroy(gameObject, 5.0f);
+        Destroy(gameObject);
         GameOver.gameObject.SetActive(true);
+    }
+
+    public void DestroyPlayer()
+    {
+        Destroy(gameObject);
     }
 }

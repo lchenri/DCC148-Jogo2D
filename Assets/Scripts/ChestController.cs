@@ -12,10 +12,13 @@ public class ChestController : MonoBehaviour
     public Transform LevelClear;
     private AudioSource sound;
 
+    private PlayerController player;
+
     void Start()
     {
         chestOpen.SetActive(false);
         sound = GetComponent<AudioSource>();
+        player = FindObjectOfType<PlayerController>();
     }
 
     void Update()
@@ -43,6 +46,7 @@ public class ChestController : MonoBehaviour
             sound.Play();
             chestAnimation.SetTrigger("Open");
             chestOpenBool = true;
+            player.DestroyPlayer();
         }
     }
 }
